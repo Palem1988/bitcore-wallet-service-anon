@@ -12,9 +12,9 @@ var tingodb = require('tingodb')({
   memStore: true
 });
 
-var Bitcore = require('bitcore-lib-xsg');
+var Bitcore = require('bitcore-lib-anon');
 var Bitcore_ = {
-  xsg: Bitcore
+  anon: Bitcore
 };
 
 var Common = require('../../lib/common');
@@ -131,18 +131,18 @@ helpers._generateCopayersTestData = function() {
 
     var xpriv_45H = xpriv.deriveChild(45, true);
     var xpub_45H = Bitcore.HDPublicKey(xpriv_45H);
-    var id45 = Model.Copayer._xPubToCopayerId('xsg', xpub_45H.toString());
+    var id45 = Model.Copayer._xPubToCopayerId('anon', xpub_45H.toString());
 
     var xpriv_44H_0H_0H = xpriv.deriveChild(44, true).deriveChild(0, true).deriveChild(0, true);
     var xpub_44H_0H_0H = Bitcore.HDPublicKey(xpriv_44H_0H_0H);
-    var id44btcz = Model.Copayer._xPubToCopayerId('xsg', xpub_44H_0H_0H.toString());
+    var id44anon = Model.Copayer._xPubToCopayerId('anon', xpub_44H_0H_0H.toString());
 
     var xpriv_1H = xpriv.deriveChild(1, true);
     var xpub_1H = Bitcore.HDPublicKey(xpriv_1H);
     var priv = xpriv_1H.deriveChild(0).privateKey;
     var pub = xpub_1H.deriveChild(0).publicKey;
 
-    console.log('{id44btcz: ', "'" + id44btcz + "',");
+    console.log('{id44anon: ', "'" + id44anon + "',");
     console.log('id45: ', "'" + id45 + "',");
     console.log('xPrivKey: ', "'" + xpriv.toString() + "',");
     console.log('xPubKey: ', "'" + xpub.toString() + "',");
@@ -181,7 +181,7 @@ helpers.createAndJoinWallet = function(m, n, opts, cb) {
     n: n,
     pubKey: TestData.keyPair.pub,
     singleAddress: !!opts.singleAddress,
-    coin: opts.coin || 'xsg',
+    coin: opts.coin || 'anon',
   };
   if (_.isBoolean(opts.supportBIP44AndP2PKH))
     walletOpts.supportBIP44AndP2PKH = opts.supportBIP44AndP2PKH;
@@ -239,7 +239,7 @@ helpers._parseAmount = function(str) {
 
   if (_.isNumber(str)) str = str.toString();
 
-  var re = /^((?:\d+c)|u)?\s*([\d\.]+)\s*(xsg|bit|sat)?$/;
+  var re = /^((?:\d+c)|u)?\s*([\d\.]+)\s*(anon|bit|sat)?$/;
   var match = str.match(re);
 
   if (!match) throw new Error('Could not parse amount ' + str);
@@ -251,7 +251,7 @@ helpers._parseAmount = function(str) {
 
   switch (match[3]) {
     default:
-    case 'xsg':
+    case 'anon':
       result.amount = Utils.strip(+match[2] * 1e8);
       break;
     case 'bit':
