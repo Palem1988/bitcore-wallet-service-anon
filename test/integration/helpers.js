@@ -133,7 +133,7 @@ helpers._generateCopayersTestData = function() {
     var xpub_45H = Bitcore.HDPublicKey(xpriv_45H);
     var id45 = Model.Copayer._xPubToCopayerId('anon', xpub_45H.toString());
 
-    var xpriv_44H_0H_0H = xpriv.deriveChild(44, true).deriveChild(0, true).deriveChild(0, true);
+    var xpriv_44H_0H_0H = xpriv.deriveChild(44, true).deriveChild(220, true).deriveChild(0, true);
     var xpub_44H_0H_0H = Bitcore.HDPublicKey(xpriv_44H_0H_0H);
     var id44anon = Model.Copayer._xPubToCopayerId('anon', xpub_44H_0H_0H.toString());
 
