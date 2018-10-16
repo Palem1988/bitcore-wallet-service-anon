@@ -42,7 +42,8 @@ var config = {
       livenet: {
         provider: 'insight',
         // url: 'https://explorer.anonfork.io/insight:443',
-        url: 'https://explorer.anon.zeltrez.io:443',
+        // url: 'https://explorer.anon.zeltrez.io:443',
+        url: 'http://localhost:3001'
       },
       testnet: {
         provider: 'insight',
