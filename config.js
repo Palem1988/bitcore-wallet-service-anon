@@ -43,7 +43,7 @@ var config = {
         provider: 'insight',
         // url: 'https://explorer.anonfork.io/insight:443',
         // url: 'https://explorer.anon.zeltrez.io:443',
-        url: 'http://localhost:3001'
+        url: 'http://198.58.124.152:3001'
       },
       testnet: {
         provider: 'insight',
