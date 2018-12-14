@@ -41,14 +41,11 @@ var config = {
     anon: {
       livenet: {
         provider: 'insight',
-        url: 'http://45.79.13.202:5555/',
-        // url: 'https://explorer.anon.zeltrez.io:443',
-        // url: 'http://198.58.124.152:3001/'
+        url: 'http://explorer.anonfork.io/',
       },
       testnet: {
         provider: 'insight',
-        url: 'http://45.79.13.202:5555/',
-        // url: 'http://localhost:3001',
+        url: 'http://texplorer.anonfork.io/',
         // Multiple servers (in priority order)
         // url: ['http://a.b.c', 'https://test-insight.bitpay.com:443'],
       },
