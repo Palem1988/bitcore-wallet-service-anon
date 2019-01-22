@@ -2,7 +2,7 @@
   "name": "bitcore-wallet-service-anon",
   "description": "A service for Mutisig HD Bitcoin Wallets",
   "author": "The BitcoinZ Community",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "licence": "MIT",
   "keywords": [
     "bitcoin",
